@@ -3,4 +3,31 @@
 body {
     background-color: rgb(225, 187, 187);
     font-family: 'Lato';
+    width: 100%;
+
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.players {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.player {
+    height: 100%;
+    align-items: stretch;
+}
+
+.player--is-active {
+    background-color: lightgray;
+}
+.feature {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
 }
