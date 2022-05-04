@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
 
 body {
-    background: linear-gradient(90deg,rgb(215, 208, 208) 50%, white 50%);
+    background: linear-gradient(90deg,var(--color-2) 50%, var(--color-3) 50%);
     font-family: 'Lato';
     width: 100%;
     max-height: 100vh;
-
+    font-size: 25px;
+    text-transform: uppercase;
 }
-
+:root {
+    --color-1 : #EB4D4C;
+    --color-2 : rgb(230, 230, 230);
+    --color-3 : #FFFFFF;
+}
 .container{
     /* margin: 0px 0px; */
     width: 100%;
@@ -23,18 +28,32 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    min-width: 33%;
+    min-width: 33.33%;
+}
+.player__userAndScore, .player__current {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 .feature__dice {
-    width: 100px;
-    height: 100px;
+    background-color: white;
+    border-radius: 22%;
 }
-
+.feature__dice-img {
+    width: 300px;
+    height: 300px;
+}
 .feature__newGame, .feature__rollDice, .feature__hold{
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: flex-center;
+    padding: 5px 10px;
 }
 .feature__newGame__img, .feature__rollDice__img, .feature__hold__img{
-    padding: 5px;
+    width: 60px;
+    height: 60px;
+}
+.feature__newGame__title, .feature__rollDice__title, .feature__hold__title {
+    align-self: flex-end;
 }
