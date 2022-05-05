@@ -2,11 +2,12 @@
 
 body {
     background: linear-gradient(90deg,var(--color-2) 50%, var(--color-3) 50%);
-    font-family: 'Lato';
+    font-family: 'Lato', 'sans-serif';
+    font-size: 35px;
+    font-weight: 300;
+    text-transform: uppercase;
     width: 100%;
     max-height: 100vh;
-    font-size: 25px;
-    text-transform: uppercase;
 }
 :root {
     --color-1 : #EB4D4C;
@@ -14,46 +15,72 @@ body {
     --color-3 : #FFFFFF;
 }
 .container{
-    /* margin: 0px 0px; */
     width: 100%;
     height: 100%;
     display: flex;
     min-height: 100vh;
 }
-.player--is-active {
-    background-color: lightgray;
-}
 .player, .feature, .feature__bloc {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     min-width: 33.33%;
 }
 .player__userAndScore, .player__current {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
 }
+.player__userName1-h2, .player__userName2-h2 {
+    font-size: 2em;
+    font-weight: 100;
+    letter-spacing: 6px;
+}
+.player__globalScore1-p, .player__globalScore2-p {
+    font-size: 5em;
+    font-weight: 200;
+    color: var(--color-1);
+}
+.player__current {
+    background-color: var(--color-1);
+    padding: 10px 50px;
+
+}
+.player__current__title {
+    font-size: 0.6em;
+    font-weight: 600;
+}
+.player__current__score1-p, .player__current__score2-p {
+    font-size: 1.6em;
+    font-weight: 300;
+    color: var(--color-3);
+}
+/* TODO repositionner les éléments de la colone feature */
 .feature__dice {
-    background-color: white;
+    background-color: var(--color-3);
     border-radius: 22%;
 }
 .feature__dice-img {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
 }
 .feature__newGame, .feature__rollDice, .feature__hold{
     display: flex;
     flex-direction: row;
-    align-items: flex-center;
     padding: 5px 10px;
+    align-items: center;
 }
 .feature__newGame__img, .feature__rollDice__img, .feature__hold__img{
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
+    padding-right: 10px;
+    margin-bottom: 0px;
 }
-.feature__newGame__title, .feature__rollDice__title, .feature__hold__title {
-    align-self: flex-end;
+.feature__newGame__title:hover, .feature__rollDice__title:hover, .feature__hold__title:hover {
+    color: var(--color-1);
+    cursor: pointer;
+}
+p {
+    margin-bottom: 0;
 }
