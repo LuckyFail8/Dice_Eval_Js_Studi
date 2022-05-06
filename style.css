@@ -77,7 +77,7 @@ body {
     padding-right: 10px;
     margin-bottom: 0px;
 }
-.feature__newGame__title:hover, .feature__rollDice__title:hover, .feature__hold__title:hover {
+.feature__newGame:hover, .feature__rollDice:hover, .feature__hold:hover {
     color: var(--color-1);
     cursor: pointer;
 }
