@@ -20,3 +20,10 @@ function changeFaceDice() {
     // displayFaceDice.src.match = './images/dice-2.svg';
     displayFaceDice.src
 };
+
+// Si scoreDice = 2 alors faceDice 
+class FaceDice {
+    constructor(number){
+        this.number = number
+    }
+}
