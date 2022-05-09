@@ -2,6 +2,7 @@
 const useRollDice = document.querySelector('.feature__rollDice');
 const displayFaceDice = document.getElementById('img-dice');
 const useFaceDice = document.querySelector('.feature__dice');
+
 let diceScore = "";
 
 function changeFaceDice(){
