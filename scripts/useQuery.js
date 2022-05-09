@@ -1,6 +1,6 @@
 const useNewGame = document.querySelector('.feature__newGame');
-const useDice = document.querySelector('.feature__dice');
-const displayFaceDice = document.querySelector('feature__dice-img');
+const useFaceDice = document.querySelector('.feature__dice');
+const displayFaceDice = document.getElementById('img-dice');
 const useRollDice = document.querySelector('.feature__rollDice');
 const useHold = document.querySelector('.feature__hold');
 
@@ -11,4 +11,3 @@ const displayPlayer2GlobalScore = document.querySelector('.player__globalScore2-
 const displayPlayer1CurrentScore = document.querySelector('.player__current__score1-p');
 const displayPlayer2CurrentScore = document.querySelector('.player__current__score2-p');
 
-export * from useQuery.js
