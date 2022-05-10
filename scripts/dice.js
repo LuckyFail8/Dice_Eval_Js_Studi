@@ -1,4 +1,5 @@
-// import * as useQuery  from './useQuery.js';
+import * as query  from './useQuery.js';
+
 const useRollDice = document.querySelector('.feature__rollDice');
 const displayFaceDice = document.getElementById('img-dice');
 const useFaceDice = document.querySelector('.feature__dice');
@@ -22,3 +23,7 @@ useRollDice.addEventListener("click", throwTheDice => {
 useFaceDice.addEventListener ("click", throwTheDice => {
     randomDice();
 }); 
+
+query.useHold.addEventListener("click", e => {
+    console.log(addEventListener)
+});
