@@ -1,4 +1,4 @@
-export class Player {
+export default class Player {
     constructor(name, globalScore, currentScore){
         this.name = name;
         this.globalScore = globalScore;

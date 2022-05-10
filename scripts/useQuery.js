@@ -38,14 +38,23 @@ export default class Query {
         this.player1CurrentScore.textContent = player1.currentScore;
         this.player2CurrentScore.textContent = player2.currentScore;
     }
-
+    
+// TODO: Modifier l'orientation du dégradé en fonction du joueur ou échanger les couleurs du dégradé
     displayPlayerIsActive(player1IsActive) {
+        if (player1IsActive){
             this.editPlayer1.classList.add('player1--is-active');
             this.editPlayer2.classList.remove('player2--is-active');
             this.dom.style.backgroundImage = ('-moz-linear-gradient(90deg,var(--active-color-1) 50%, var(--active-color-2) 50%');
             this.volumeBtn.style.setProperty('--btn-color', '#f8f9fa')
             this.helpBtn.style.setProperty('--btn-color', '#f8f9fa')
-            
+        } else {
+            this.editPlayer2.classList.add('player2--is-active');
+            this.editPlayer1.classList.remove('player1--is-active');
+            this.dom.style.backgroundImage = ('-moz-linear-gradient(90deg,var(--active-color-1) 50%, var(--active-color-2) 50%');
+            this.volumeBtn.style.setProperty('--btn-color', '#f8f9fa')
+            this.helpBtn.style.setProperty('--btn-color', '#f8f9fa')
+
+        }
         } 
 }
 
