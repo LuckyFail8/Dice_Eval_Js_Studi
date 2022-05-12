@@ -1,0 +1,37 @@
+Quand Player1IsActive :
+Le score du dé s'ajoute au score courrant du player 1;
+tant que scoreDice est different de la valeur "1"
+currentScore1 = currentScore1 + scoreDice
+
+Si le joueur1 utilise la fonction hold : 
+globalScore1 = globalScore1 + currentScore1
+Vérifier si le joueur à gagné
+Le player 1 céde la main et current score = 0
+la classe player1--is-active est supprimer
+la classe player2--is-active est ajoutée a la section player 2
+le background fait une rotation de 180°
+
+Si le resultat du scoreDice = 1:
+Le player 1 céde la main et current score = 0
+la classe player1--is-active est supprimer
+la classe player2--is-active est ajoutée a la section player 2
+le background fait une rotation de 180°
+
+Le score du dé s'ajoute au score courrant du player 2;
+tant que scoreDice est different de la valeur "1"
+currentScore2 = currentScore2 + scoreDice
+
+Si le joueur2 utilise la fonction hold : 
+globalScore2 = globalScore2 + currentScore2
+Vérifier si le joueur à gagné
+Le player 2 céde la main et current score = 0
+la classe player2--is-active est supprimer
+la classe player1--is-active est ajoutée a la section player 2
+le background fait une rotation de 180°
+
+Si le resultat du scoreDice = 1:
+Le player 2 céde la main et current score = 0
+la classe player2--is-active est supprimer
+la classe player1--is-active est ajoutée a la section player 2
+le background fait une rotation de 180°
+

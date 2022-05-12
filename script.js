@@ -7,6 +7,21 @@ const player2 = new Player();
 const query = new Query();
 let player1IsActive = true;
 
+throwTheDice() => {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 const newGame = () => {
     player1Turn = true
     player1.initPlayer(0, 0)
@@ -14,12 +29,12 @@ const newGame = () => {
     query.displayScores(player1, player2)
     displayFaceDice.src = `./images/dice-1.svg`;
     query.updateTurnView(player1Turn)
-    rollDiceBtn.classList.remove(`disabled`)
-    diceFace.classList.remove(`disabled`)
-    holdBtn.classList.remove(`disabled`)
-    for (let i = 1; i < 3; i++) {
-        board.classList.remove(`player${i}-victory`)
-    }
+    // rollDiceBtn.classList.remove(`disabled`)
+    // diceFace.classList.remove(`disabled`)
+    // holdBtn.classList.remove(`disabled`)
+    // for (let i = 1; i < 3; i++) {
+    //     board.classList.remove(`player${i}-victory`)
+    // }
 }
 
 console.log(player1.currentScore)

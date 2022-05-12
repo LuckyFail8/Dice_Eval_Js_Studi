@@ -17,14 +17,6 @@ function randomDice(){
     displayFaceDice.src = `./images/dice-${diceScore}.svg`;
 };
 
-useRollDice.addEventListener("click", throwTheDice => {
-    randomDice();
-}); 
+useRollDice.addEventListener("click", randomDice); 
 
-useFaceDice.addEventListener ("click", throwTheDice => {
-    randomDice();
-}); 
-
-// query.useHold.addEventListener("click", e => {
-//     console.log(addEventListener)
-// });
+useFaceDice.addEventListener ("click", randomDice); 
