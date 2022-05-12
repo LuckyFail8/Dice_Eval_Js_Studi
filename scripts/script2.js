@@ -22,8 +22,8 @@ function changeFaceDice(){
 
 function randomDice(){
     diceScore = Math.floor((Math.random() * 6) + 1);
+    changeFaceDice();
     console.log(`dice = ${diceScore}`);
-    displayFaceDice.src = `./images/dice-${diceScore}.svg`;
 };
 
 
@@ -44,12 +44,9 @@ class Player {
     current() {
         if (diceScore !== 1){
             this.currentScore += diceScore;
-        } else if (currentPlayer = player1) {
+        } else {
             this.currentScore = 0;
-            currentPlayer = player2;
-        }
-        console.log(`currentScore de ${this.name} = ${this.currentScore}`);
-        
+        };
     }
     
     hold() {
@@ -69,19 +66,57 @@ let diceScore = "";
 displayPlayer1Name.textContent = `${player1.name}`;
 player1GlobalScore.textContent = `${player1.currentScore}`;
 displayPlayer2Name.textContent = `${player2.name}`;
-player2GlobalScore.textContent = `${player2.currentScore}`;
+player2CurrentScore.textContent = `${player2.currentScore}`;
 // player1.current(randomDice);
 
 // if currentPlayer = player1 on modifie
+// [useRollDice, useFaceDice].forEach(item => {
+//     item.addEventListener('click', event => {
+//         randomDice();
+//         if (currentPlayer = player1){
+//             player1.current();
+//             player1CurrentScore.textContent = `${player1.currentScore}`;
+//             console.log(`currentScore de ${player1.name} = ${player1.currentScore}`);
+//             if (diceScore == 1){
+//                 currentPlayer = player2; 
+//                 console.log(currentPlayer);
+//                 return currentPlayer = player2;
+//             }
+//         } else if (currentPlayer = player2) {
+//             player2.current();
+//             player2CurrentScore.textContent = `${player2.currentScore}`;
+//             console.log(`currentScore de ${player2.name} = ${player2.currentScore}`);
+//             if (diceScore == 1){
+//                 currentPlayer = player1; 
+//                 console.log(currentPlayer);
+//         }
+//     }
+// })
+// });
+
 [useRollDice, useFaceDice].forEach(item => {
     item.addEventListener('click', event => {
         randomDice();
         if (currentPlayer = player1){
-            player1.current();
-            player1CurrentScore.textContent = `${player1.currentScore}`;
-        } else {
+            currentPlayer.current();
+            player1CurrentScore.textContent = `${currentPlayer.currentScore}`;
+            console.log(`currentScore de ${currentPlayer.name} = ${currentPlayer.currentScore}`);
+            if (diceScore == 1){
+                currentPlayer == player2; 
+            }
+        } else if (currentPlayer = player2) {
             player2.current();
             player2CurrentScore.textContent = `${player2.currentScore}`;
+            console.log(`currentScore de ${player2.name} = ${player2.currentScore}`);
+            if (diceScore == 1){
+                currentPlayer = player1; 
+                console.log(currentPlayer);
         }
-    })
+    }
+})
+});
+
+useHold.addEventListener('click', event => {
+    currentPlayer.hold();
+    player1GlobalScore.textContent = `${player1.globalScore}`;
 });
