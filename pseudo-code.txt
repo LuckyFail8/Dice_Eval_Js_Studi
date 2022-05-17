@@ -34,4 +34,3 @@ Le player 2 céde la main et current score = 0
 la classe player2--is-active est supprimer
 la classe player1--is-active est ajoutée a la section player 2
 le background fait une rotation de 180°
-
