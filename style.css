@@ -15,6 +15,8 @@ body {
     --color-3 : #FFFFFF;
     --active-color-1: rgb(230, 230, 230);
     --active-color-2: #FFFFFF;
+    --color-win : rgb(159, 230, 159) ;
+    --color-loose : rgb(230, 164, 164) ;
 }
 .container{
     width: 100%;
