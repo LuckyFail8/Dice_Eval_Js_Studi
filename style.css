@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&display=swap');
 
 body {
-    background: linear-gradient(90deg,var(--active-color-1) 50%, var(--active-color-2) 50%);
+    background: linear-gradient(90deg, var(--active-color-1) 50%, var(--active-color-2) 50%);
     font-family: 'Lato', 'sans-serif';
-    font-size: 35px;
+    font-size: 20px;
     font-weight: 300;
     text-transform: uppercase;
     width: 100%;
@@ -22,22 +22,20 @@ body {
     width: 100%;
     height: 100%;
     min-height: 100vh;
-    /* align-items: stretch; */
-    /* gap: 50px; */
+    max-width: 790px;
 }
-.player, .feature, .feature__bloc {
+.player, .feature, .feature__bloc, .feature__newGame {
     min-width: 33.33%;
-    width: 100%;
 }
 .player__userName1-h2, .player__userName2-h2 {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 100;
     letter-spacing: 6px;
     word-break: break-word;
     text-align: center;
 }
 .player__globalScore1-p, .player__globalScore2-p {
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 200;
     color: var(--color-1);
 }
@@ -49,18 +47,19 @@ body {
     font-weight: 600;
 }
 .player__current__score1-p, .player__current__score2-p {
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-weight: 300;
     color: var(--color-3);
 }
-/* TODO repositionner les éléments de la colone feature */
 .feature__dice {
     background-color: var(--color-3);
     border-radius: 22%;
+    width: 100px;
+    height: 100px;
 }
 .feature__dice-img {
-    width: 250px;
-    height: 250px;
+    width: 100px;
+    height: 100px;
 }
 .feature__newGame__img, .feature__rollDice__img, .feature__hold__img{
     width: 45px;
@@ -74,8 +73,37 @@ p {
     margin-bottom: 0;
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (min-width: 990px) {
+    body {
+        font-size: 35px;
+        outline: 30px solid #A18368;
+        outline-offset: -30px;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    .feature__dice {
+        width: 250px;
+        height: 250px;
+    }
+    .feature__dice-img {
+        width: 250px;
+        height: 250px;
+    }
     body {
         font-size: 25px;
+    }
+    .player__globalScore1-p, .player__globalScore2-p {
+        font-size: 5em;
+    }
+    .player__userName1-h2, .player__userName2-h2 {
+        font-size: 2em;
+    }
+    .player__current__score1-p, .player__current__score2-p {
+        font-size: 1.6em;
     }
 }
