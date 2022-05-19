@@ -55,7 +55,6 @@ let winner = "";
 
 
 changeBackground();
-// changeBackgroundGameWon();
 
 useNewGame.addEventListener('click', newGame);
 useHold.addEventListener('click', funcHold);
@@ -72,24 +71,16 @@ function changeBackground(){
         displayPlayer2Name.style.fontWeight = '300'
         displayPlayer1Name.style.fontWeight = '200'
     }else if (currentPlayer == player1 && winner == player1) {
-        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-win) 50%, var(--color-loose) 50%);'
+        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-win) 50%, var(--color-loose) 50%)';
         displayPlayer1Name.style.fontWeight = '300'
         displayPlayer2Name.style.fontWeight = '200'
     }else if (currentPlayer == player2 && winner == player2) {
-        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-loose) 50%, var(--color-win) 50%);'
+        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-loose) 50%, var(--color-win) 50%)';
         displayPlayer2Name.style.fontWeight = '300'
         displayPlayer1Name.style.fontWeight = '200'
     }
 };
 
-
-// function changeBackgroundGameWon(){
-//     if (currentPlayer == player1 && winner == player1) {
-//         document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-win) 50%, (--color-lose) 50%);'
-//     }else if (currentPlayer == player2 && winner == player2) {
-//         document.body.style.backgroundImage = 'linear-gradient(90deg, (--color-lose) 50%, var(--color-win) 50%);'
-//     }
-// };
 
 
 function changeFaceDice(){
@@ -104,6 +95,8 @@ function randomDice(){
 };
 
 function newGame(){
+    currentPlayer = player1;
+    winner = ""
     player1.initPlayer(player1.name, 0, 0);
     player2.initPlayer(player2.name, 0, 0);
     displayPlayer1Name.textContent = `${player1.name}`;
@@ -115,6 +108,7 @@ function newGame(){
     useHold.addEventListener('click', funcHold);
     useRollDice.addEventListener('click', throwtheDice);
     useFaceDice.addEventListener('click', throwtheDice);
+    changeBackground();
 }
 
 function disableDiceAndHold() {
@@ -158,16 +152,15 @@ function funcHold(){
         if (player1.gameWon() === true) {
             winner = player1;
             currentPlayer = player1;
-            changeBackground();
             disableDiceAndHold();
             alert(`${player1.name} à gagné`);
-            console.log(`And the WINNER IS ... ${winner.name}`);
+            console.log(`And the WINNER IS ... ${winner.name} and current player ${currentPlayer.name}`);
+            changeBackground();
             return;
         };
         currentPlayer = player2;
         changeBackground();
         console.log(`Hold : \n currentPlayer : ${currentPlayer.name}, player1 : ${player1.name}, player2 : ${player2.name}`);
-    
     }else {
         player2.hold();
         player2GlobalScore.textContent = `${player2.globalScore}`;
@@ -175,10 +168,10 @@ function funcHold(){
         if (player2.gameWon() === true) {
             winner = player2;
             currentPlayer = player2;
-            changeBackground();
             disableDiceAndHold();
             alert(`${player2.name} à gagné`);
             console.log(`And the WINNER IS ... ${winner.name} and current player ${currentPlayer.name}`);
+            changeBackground();
             return;
         };
         currentPlayer = player1;
