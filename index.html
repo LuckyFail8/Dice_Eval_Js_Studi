@@ -9,6 +9,32 @@
     <title>Dice du ventre</title>
 </head>
 <body>
+    <div class="buttonAndModal d-flex">
+        <div class="buttonAndModal__sound d-flex justify-content-center align-items-center">
+            <img class="buttonAndModal__sound__img" src="./images/volume-up.svg" alt="sound activated">
+        </div>
+        <div class="buttonAndModal__modalInfo d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <img class="buttonAndModal__modalInfo__img" src="./images/info-circle.svg" alt="Modal game rule's">
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
     <main class="container d-flex flex-column justify-content-evenly flex-sm-row  ">
         <section class="player player1 player1--is-active d-flex flex-column align-items-center justify-content-evenly">
             <div class="player__userAndScore d-flex flex-column align-items-center ">

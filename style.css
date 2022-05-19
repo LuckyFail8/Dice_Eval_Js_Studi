@@ -18,6 +18,22 @@ body {
     --color-win: rgb(159, 230, 159) ;
     --color-loose: rgb(230, 164, 164) ;
 }
+.buttonAndModal {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    gap: 5px;
+}
+.buttonAndModal img {
+    width: 35px;
+    height: 35px;
+}
+.buttonAndModal__sound, .buttonAndModal__modalInfo{
+    width: 40px;
+    height: 40px;
+    background: rgba(212, 175, 175, 0.562);
+    border-radius: 50%;
+} 
 .container{
     width: 100%;
     height: 100%;
@@ -79,7 +95,11 @@ p {
         outline: 30px solid #A18368;
         outline-offset: -30px;
     }
-    
+    .buttonAndModal {
+        top: 40px;
+        left: 40px;
+        gap: 35px;
+    }
     .container {
         max-width: 100%;
     }
