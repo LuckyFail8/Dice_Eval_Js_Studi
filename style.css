@@ -21,25 +21,17 @@ body {
 .container{
     width: 100%;
     height: 100%;
-    display: flex;
     min-height: 100vh;
 }
 .player, .feature, .feature__bloc {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
     min-width: 33.33%;
-}
-.player__userAndScore, .player__current {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 .player__userName1-h2, .player__userName2-h2 {
     font-size: 2em;
     font-weight: 100;
     letter-spacing: 6px;
+    word-break: break-word;
+    text-align: center;
 }
 .player__globalScore1-p, .player__globalScore2-p {
     font-size: 5em;
@@ -48,8 +40,6 @@ body {
 }
 .player__current {
     background-color: var(--color-1);
-    padding: 10px 50px;
-
 }
 .player__current__title {
     font-size: 0.6em;
@@ -69,17 +59,9 @@ body {
     width: 250px;
     height: 250px;
 }
-.feature__newGame, .feature__rollDice, .feature__hold{
-    display: flex;
-    flex-direction: row;
-    padding: 5px 10px;
-    align-items: center;
-}
 .feature__newGame__img, .feature__rollDice__img, .feature__hold__img{
     width: 45px;
     height: 45px;
-    padding-right: 10px;
-    margin-bottom: 0px;
 }
 .feature__newGame:hover, .feature__rollDice:hover, .feature__hold:hover {
     color: var(--color-1);

@@ -9,42 +9,42 @@
     <title>Dice du ventre</title>
 </head>
 <body>
-    <div class="container">
-        <section class="player player1 player1--is-active">
-            <div class="player__userAndScore">
+    <div class="container d-flex">
+        <section class="player player1 player1--is-active d-flex flex-column align-items-center justify-content-evenly">
+            <div class="player__userAndScore d-flex flex-column align-items-center ">
                 <h2 class="player__userName1-h2">Player 1</h2>
                 <p class="player__globalScore1-p">0</p>
             </div>
-            <div class="player__current">
+            <div class="player__current d-flex flex-column align-items-center px-5 py-2">
                 <p class="player__current__title">current</p>
                 <p class="player__current__score1-p">0</p>
             </div>
         </section>
-        <section class="feature">
-            <div class="feature__newGame ">
-                <img src="./images/plus-circle.svg" alt="Logo nouvelle partie" class="feature__newGame__img">
+        <section class="feature d-flex flex-column align-items-center justify-content-evenly">
+            <div class="feature__newGame d-flex align-items-center px-2 py-1 ">
+                <img src="./images/plus-circle.svg" alt="Logo nouvelle partie" class="feature__newGame__img pe-1">
                 <p class="feature__newGame__title">New game</p>
             </div>
             <div class="feature__dice" type="button">
                 <img class="feature__dice-img" id="img-dice" src="./images/dice-1.svg" alt="Dé numéro 1">
             </div>
             <section class="feature__bloc">
-                <div class="feature__rollDice">
-                    <img class="feature__rollDice__img" src="./images/arrow-repeat.svg" alt="Logo pour relancer le dé">
+                <div class="feature__rollDice d-flex align-items-center px-2 py-1">
+                    <img class="feature__rollDice__img pe-1" src="./images/arrow-repeat.svg" alt="Logo pour relancer le dé">
                     <p class="feature__rollDice__title">Roll dice</p>
                 </div>
-                <div class="feature__hold">
-                    <img src="./images/box-arrow-in-down.svg" alt="Logo pour ajouter son score au score globale" class="feature__hold__img">
+                <div class="feature__hold d-flex align-items-center px-2 py-1">
+                    <img src="./images/box-arrow-in-down.svg" alt="Logo pour ajouter son score au score globale" class="feature__hold__img pe-1">
                     <p class="feature__hold__title">Hold</p>
                 </div>
             </section>
         </section>
-        <section class="player player2">
-            <div class="player__userAndScore">
+        <section class="player player2 d-flex flex-column align-items-center justify-content-evenly">
+            <div class="player__userAndScore d-flex flex-column align-items-center ">
                 <h2 class="player__userName2-h2">Player 2</h2>
                 <p class="player__globalScore2-p">0</p>
             </div>
-            <div class="player__current">
+            <div class="player__current d-flex flex-column align-items-center px-5 py-2">
                 <p class="player__current__title">current</p>
                 <p class="player__current__score2-p">0</p>
             </div>
