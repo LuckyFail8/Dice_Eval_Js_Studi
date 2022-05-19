@@ -156,7 +156,7 @@ function funcHold(){
             currentPlayer = player1;
             disableDiceAndHold();
             alert(`${player1.name} à gagné`);
-            changeBackground();
+            return changeBackground();
         };
         currentPlayer = player2;
         changeBackground();
@@ -171,7 +171,7 @@ function funcHold(){
             currentPlayer = player2;
             disableDiceAndHold();
             alert(`${player2.name} à gagné`);
-            changeBackground();
+            return changeBackground();
         };
         currentPlayer = player1;
         changeBackground();
