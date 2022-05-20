@@ -20,9 +20,9 @@ body {
 }
 .buttonAndModal {
     position: absolute;
-    top: 10px;
-    left: 5px;
-    gap: 5px;
+    top: 15px;
+    left: 15px;
+    gap: 10px;
 }
 .buttonAndModal img {
     width: 35px;
@@ -31,8 +31,9 @@ body {
 .buttonAndModal__sound, .buttonAndModal__modalInfo{
     width: 40px;
     height: 40px;
-    background: rgba(212, 175, 175, 0.562);
+    background: rgba(207, 182, 182, 0.404);
     border-radius: 50%;
+    cursor:pointer;
 } 
 .container{
     width: 100%;
@@ -97,8 +98,8 @@ p {
     }
     .buttonAndModal {
         top: 40px;
-        left: 40px;
-        gap: 35px;
+        left: 45px;
+        gap: 30px;
     }
     .container {
         max-width: 100%;

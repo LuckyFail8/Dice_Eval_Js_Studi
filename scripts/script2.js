@@ -29,12 +29,21 @@ class Player {
     }
 }
 
+let sfx = {
+    throwtheDice: new Audio('./sounds/throwtheDice.mp3'),
+    diceScore1: new Audio('./sounds/diceScore1.mp3'),
+    hold: new Audio('./sounds/hold.mp3'),
+    gameWon: new Audio('./sounds/gameWon.mp3'),
+}
+
 const useNewGame = document.querySelector('.feature__newGame');
 const useFaceDice = document.querySelector('.feature__dice');
 const useRollDice = document.querySelector('.feature__rollDice');
 const useHold = document.querySelector('.feature__hold');
+const useButtonSound = document.querySelector('.buttonAndModal__sound')
 
 const editBody = document.getElementsByTagName('body');
+const displaySoundVolume = document.querySelector('.buttonAndModal__sound__img')
 const editContainer = document.querySelector('.container');
 const editPlayer1 = document.querySelector('.player1')
 const editPlayer2 = document.querySelector('.player2')
@@ -50,38 +59,66 @@ let player1 = new Player('Jb', 0, 0);
 let player2 = new Player('Charles', 0, 0);
 let currentPlayer = player1;
 let diceScore = "";
-let victory = false;
 let winner = "";
+let mute = false;
+let media576 = window.matchMedia('(min-width: 576px)');
+
 
 
 changeBackground();
+
 
 useNewGame.addEventListener('click', newGame);
 useHold.addEventListener('click', funcHold);
 useRollDice.addEventListener('click', throwtheDice);
 useFaceDice.addEventListener('click', throwtheDice);
+useButtonSound.addEventListener('click', muteTheSound);
+media576.addEventListener('change', changeBackground)
 
 function changeBackground(){
     if (currentPlayer == player1 && winner == ""){
-        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--active-color-1) 50%, var(--active-color-2) 50%)';
+        document.body.style.backgroundImage = 'linear-gradient(180deg, var(--active-color-1) 50%, var(--active-color-2) 50%)';
         displayPlayer1Name.style.fontWeight = '300'
         displayPlayer2Name.style.fontWeight = '200'
+        if (media576.matches){
+                document.body.style.backgroundImage = 'linear-gradient(90deg, var(--active-color-1) 50%, var(--active-color-2) 50%)';
+        };
     }else if (currentPlayer == player2 && winner == "") {
-        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--active-color-2) 50%, var(--active-color-1) 50%)';
+        document.body.style.backgroundImage = 'linear-gradient(180deg, var(--active-color-2) 50%, var(--active-color-1) 50%)';
         displayPlayer2Name.style.fontWeight = '300'
         displayPlayer1Name.style.fontWeight = '200'
+        if (media576.matches){
+                document.body.style.backgroundImage = 'linear-gradient(90deg, var(--active-color-1) 50%, var(--active-color-2) 50%)';
+        };
     }else if (currentPlayer == player1 && winner == player1) {
-        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-win) 50%, var(--color-loose) 50%)';
+        document.body.style.backgroundImage = 'linear-gradient(180deg, var(--color-win) 50%, var(--color-loose) 50%)';
         displayPlayer1Name.style.fontWeight = '300'
         displayPlayer2Name.style.fontWeight = '200'
+        if (media576.matches){
+                document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-win) 50%, var(--color-loose) 50%)';
+        };
     }else if (currentPlayer == player2 && winner == player2) {
-        document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-loose) 50%, var(--color-win) 50%)';
+        document.body.style.backgroundImage = 'linear-gradient(180deg, var(--color-loose) 50%, var(--color-win) 50%)';
         displayPlayer2Name.style.fontWeight = '300'
         displayPlayer1Name.style.fontWeight = '200'
+        if (media576.matches){
+                document.body.style.backgroundImage = 'linear-gradient(90deg, var(--color-loose) 50%, var(--color-win) 50%)';
+        };
     }
 };
 
 
+function muteTheSound(){
+    if (mute == false){
+        mute = true;
+        displaySoundVolume.src = './images/volume-mute.svg';
+        displaySoundVolume.setAttribute ('alt', 'sound off')
+    } else {
+        mute = false;
+        displaySoundVolume.src = './images/volume-up.svg';
+        displaySoundVolume.setAttribute ('alt', 'sound on')
+    };
+};
 
 function changeFaceDice(){
     displayFaceDice.src = `./images/dice-${diceScore}.svg`;
@@ -92,6 +129,11 @@ function randomDice(){
     diceScore = Math.floor((Math.random() * 6) + 1);
     changeFaceDice();
     console.log(`dice = ${diceScore}`);
+    if (diceScore !==1){
+        sfx.throwtheDice.play()
+    }else {
+        sfx.diceScore1.play();
+    }
 };
 
 function newGame(){
@@ -152,12 +194,14 @@ function funcHold(){
         if (player1.gameWon() === true) {
             winner = player1;
             currentPlayer = player1;
+            sfx.gameWon.play();
             disableDiceAndHold();
             alert(`${player1.name} à gagné`);
             console.log(`And the WINNER IS ... ${winner.name} and current player ${currentPlayer.name}`);
             changeBackground();
             return;
         };
+        sfx.hold.play();
         currentPlayer = player2;
         changeBackground();
         console.log(`Hold : \n currentPlayer : ${currentPlayer.name}, player1 : ${player1.name}, player2 : ${player2.name}`);
@@ -168,12 +212,14 @@ function funcHold(){
         if (player2.gameWon() === true) {
             winner = player2;
             currentPlayer = player2;
+            sfx.gameWon.play();
             disableDiceAndHold();
             alert(`${player2.name} à gagné`);
             console.log(`And the WINNER IS ... ${winner.name} and current player ${currentPlayer.name}`);
             changeBackground();
             return;
         };
+        sfx.hold.play();
         currentPlayer = player1;
         changeBackground();
         console.log(`Hold : \n currentPlayer : ${currentPlayer.name}, player1 : ${player1.name}, player2 : ${player2.name}`);
