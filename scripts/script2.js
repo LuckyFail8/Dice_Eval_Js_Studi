@@ -60,7 +60,7 @@ let player2 = new Player('Charles', 0, 0);
 let currentPlayer = player1;
 let diceScore = "";
 let winner = "";
-let mute = false;
+let soundMuted = false;
 let media576 = window.matchMedia('(min-width: 576px)');
 
 
@@ -109,14 +109,15 @@ function changeBackground(){
 
 
 function muteTheSound(){
-    if (mute == false){
-        mute = true;
+    if (soundMuted == false){
+        soundMuted = true;
         displaySoundVolume.src = './images/volume-mute.svg';
         displaySoundVolume.setAttribute ('alt', 'sound off')
     } else {
-        mute = false;
+        soundMuted = false;
         displaySoundVolume.src = './images/volume-up.svg';
         displaySoundVolume.setAttribute ('alt', 'sound on')
+        displaySoundVolume.play();
     };
 };
 
@@ -130,9 +131,17 @@ function randomDice(){
     changeFaceDice();
     console.log(`dice = ${diceScore}`);
     if (diceScore !==1){
-        sfx.throwtheDice.play()
+        if (soundMuted == false){
+            sfx.throwtheDice.play();
+        }else{
+            sfx.throwtheDice.pause();
+        }
     }else {
-        sfx.diceScore1.play();
+        if (soundMuted == false){
+            sfx.diceScore1.play();
+        }else{
+            sfx.diceScore1.pause();
+        }
     }
 };
 
@@ -194,14 +203,22 @@ function funcHold(){
         if (player1.gameWon() === true) {
             winner = player1;
             currentPlayer = player1;
-            sfx.gameWon.play();
+            if (soundMuted == false){
+                sfx.gameWon.play();
+            }else {
+                sfx.gameWon.pause();
+            };
             disableDiceAndHold();
             alert(`${player1.name} à gagné`);
             console.log(`And the WINNER IS ... ${winner.name} and current player ${currentPlayer.name}`);
             changeBackground();
             return;
         };
-        sfx.hold.play();
+        if (soundMuted == false){
+            sfx.hold.play();
+        }else {
+            sfx.hold.pause();
+        };
         currentPlayer = player2;
         changeBackground();
         console.log(`Hold : \n currentPlayer : ${currentPlayer.name}, player1 : ${player1.name}, player2 : ${player2.name}`);
@@ -212,14 +229,22 @@ function funcHold(){
         if (player2.gameWon() === true) {
             winner = player2;
             currentPlayer = player2;
-            sfx.gameWon.play();
+            if (soundMuted == false){
+                sfx.gameWon.play();
+            }else {
+                sfx.gameWon.pause();
+            };
             disableDiceAndHold();
             alert(`${player2.name} à gagné`);
             console.log(`And the WINNER IS ... ${winner.name} and current player ${currentPlayer.name}`);
             changeBackground();
             return;
         };
-        sfx.hold.play();
+        if (soundMuted == false){
+            sfx.hold.play();
+        }else {
+            sfx.hold.pause();
+        };
         currentPlayer = player1;
         changeBackground();
         console.log(`Hold : \n currentPlayer : ${currentPlayer.name}, player1 : ${player1.name}, player2 : ${player2.name}`);
