@@ -99,22 +99,6 @@ p {
     margin-bottom: 0;
 }
 
-@media screen and (min-width: 990px) {
-    body {
-        font-size: 35px;
-        outline: 30px solid #A18368;
-        outline-offset: -30px;
-    }
-    .buttonAndModal {
-        top: 40px;
-        left: 45px;
-        gap: 30px;
-    }
-    .container {
-        max-width: 100%;
-    }
-}
-
 @media screen and (min-width: 660px) {
     .feature__dice {
         width: 250px;
@@ -137,3 +121,20 @@ p {
         font-size: 1.6em;
     }
 }
+
+@media screen and (min-width: 990px) {
+    body {
+        outline: 30px solid #A18368;
+        outline-offset: -30px;
+    }
+    .buttonAndModal {
+        top: 40px;
+        left: 45px;
+        gap: 30px;
+    }
+    .container {
+        max-width: 100%;
+    }
+}
+
+/* TODO : mettre la font-size du body a 35px au dessus de 1250px */
