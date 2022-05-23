@@ -44,7 +44,6 @@ const useButtonSound = document.querySelector('.buttonAndModal__sound')
 
 const editBody = document.getElementsByTagName('body');
 const displaySoundVolume = document.querySelector('.buttonAndModal__sound__img')
-const editContainer = document.querySelector('.container');
 const editPlayer1 = document.querySelector('.player1')
 const editPlayer2 = document.querySelector('.player2')
 const displayFaceDice = document.getElementById('img-dice');
@@ -69,7 +68,7 @@ changeBackground();
 
 
 useNewGame.addEventListener('click', newGame);
-useHold.addEventListener('click', funcHold);
+useHold.addEventListener('click', useBtnHold);
 useRollDice.addEventListener('click', throwtheDice);
 useFaceDice.addEventListener('click', throwtheDice);
 useButtonSound.addEventListener('click', muteTheSound);
@@ -156,14 +155,14 @@ function newGame(){
     player1CurrentScore.textContent = `${player1.currentScore}`;
     player2GlobalScore.textContent = `${player2.globalScore}`;
     player2CurrentScore.textContent = `${player2.currentScore}`;
-    useHold.addEventListener('click', funcHold);
+    useHold.addEventListener('click', useBtnHold);
     useRollDice.addEventListener('click', throwtheDice);
     useFaceDice.addEventListener('click', throwtheDice);
     changeBackground();
 }
 
 function disableDiceAndHold() {
-    useHold.removeEventListener('click', funcHold);
+    useHold.removeEventListener('click', useBtnHold);
     useRollDice.removeEventListener('click', throwtheDice);
     useFaceDice.removeEventListener('click', throwtheDice);
 };
@@ -194,7 +193,7 @@ function throwtheDice(){
     }
 };
 
-function funcHold(){
+function useBtnHold(){
     console.log(`currentPlayer : ${currentPlayer.name}, player1 : ${player1.name}, player2 : ${player2.name}`);
     if (currentPlayer == player1) {
         player1.hold();

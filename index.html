@@ -21,11 +21,19 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Les règles du jeu</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Les règles du jeu :</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                ...
+                <p> 
+                    Ce jeu se joue en 1 contre 1. Chaque joueur possède 2 scores, un score courant; qui stock le cumul des scores obtenue avec le dé et un score global qui stock les scores courant. Le 1er joueur à atteindre le score de 100pts gagne le droit de boire les larmes de son adversaire.
+                </p>
+                <p>
+                    Le score courant prend donc le cumul des points générés par le dé. Vous stockerais vos points à l'aide du bouton Hold, ce qui aura pour conséquence de céder la main à votre advairsaire.
+                </p>
+                <p>
+                    <strong>ATTENTION</strong> : Si le resultat du dé est 1 vos point courant retombe à 0 et cedez la main à votre adversaire !!
+                </p>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -36,7 +44,7 @@
         </div>
     </div>
     <main class="container d-flex flex-column justify-content-evenly flex-sm-row  ">
-        <section class="player player1 player1--is-active d-flex flex-column align-items-center justify-content-evenly">
+        <section class="player player1 d-flex flex-column align-items-center justify-content-evenly">
             <div class="player__userAndScore d-flex flex-column align-items-center ">
                 <h2 class="player__userName1-h2">Player 1</h2>
                 <p class="player__globalScore1-p">0</p>
@@ -47,22 +55,22 @@
             </div>
         </section>
         <section class="feature d-flex flex-sm-column align-items-center justify-content-around justify-content-xl-evenly">
-            <div class="feature__newGame d-flex flex-column justify-content-center text-center flex-lg-row align-items-center px-2 py-1 ">
+            <button class="feature__newGame d-flex flex-column justify-content-center text-center flex-lg-row align-items-center px-2 py-1 ">
                 <img src="./images/plus-circle.svg" alt="Logo nouvelle partie" class="feature__newGame__img pe-1">
                 <p class="feature__newGame__title">New game</p>
-            </div>
-            <div class="feature__dice justify-content-center align-items-center justify-content-around" type="button">
+            </button>
+            <button class="feature__dice justify-content-center align-items-center justify-content-around" type="button">
                 <img class="feature__dice-img" id="img-dice" src="./images/dice-1.svg" alt="Dé numéro 1">
-            </div>
+            </button>
             <section class="feature__bloc d-flex flex-column align-items-center">
-                <div class="feature__rollDice d-flex flex-column text-center flex-lg-row align-items-center px-2 py-1">
+                <button class="feature__rollDice d-flex flex-column text-center flex-lg-row align-items-center px-2 py-1">
                     <img class="feature__rollDice__img pe-1" src="./images/arrow-repeat.svg" alt="Logo pour relancer le dé">
                     <p class="feature__rollDice__title">Roll dice</p>
-                </div>
-                <div class="feature__hold d-flex flex-column text-center flex-lg-row align-items-center px-2 py-1">
+                </button>
+                <button class="feature__hold d-flex flex-column text-center flex-lg-row align-items-center px-2 py-1">
                     <img src="./images/box-arrow-in-down.svg" alt="Logo pour ajouter son score au score globale" class="feature__hold__img pe-1">
                     <p class="feature__hold__title">Hold</p>
-                </div>
+                </button>
             </section>
         </section>
         <section class="player player2 d-flex flex-column align-items-center justify-content-evenly">
