@@ -23,7 +23,7 @@ class Player {
     }
     
     gameWon(){
-        return this.globalScore >= 15 ? true : false;
+        return this.globalScore >= 100 ? true : false;
     }
 }
 // L'objet sfx vas me permettre d'attribuer des sons à certaines features et événements 
